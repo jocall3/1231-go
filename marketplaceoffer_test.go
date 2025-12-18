@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package jamesburvelocallaghaniiicitibankdemobusinessinc_test
+package jocall3_test
 
 import (
 	"context"
@@ -8,9 +8,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/1231-go"
-	"github.com/stainless-sdks/1231-go/internal/testutil"
-	"github.com/stainless-sdks/1231-go/option"
+	"github.com/jocall3/1231-go"
+	"github.com/jocall3/1231-go/internal/testutil"
+	"github.com/jocall3/1231-go/option"
 )
 
 func TestMarketplaceOfferRedeemWithOptionalParams(t *testing.T) {
@@ -22,18 +22,18 @@ func TestMarketplaceOfferRedeemWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Marketplace.Offers.Redeem(
 		context.TODO(),
 		"offer_home_ins_promo_1",
-		jamesburvelocallaghaniiicitibankdemobusinessinc.MarketplaceOfferRedeemParams{
-			PaymentAccountID: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("acc_chase_checking_4567"),
+		jocall3.MarketplaceOfferRedeemParams{
+			PaymentAccountID: jocall3.F[any]("acc_chase_checking_4567"),
 		},
 	)
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package jamesburvelocallaghaniiicitibankdemobusinessinc_test
+package jocall3_test
 
 import (
 	"context"
@@ -8,9 +8,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/1231-go"
-	"github.com/stainless-sdks/1231-go/internal/testutil"
-	"github.com/stainless-sdks/1231-go/option"
+	"github.com/jocall3/1231-go"
+	"github.com/jocall3/1231-go/internal/testutil"
+	"github.com/jocall3/1231-go/option"
 )
 
 func TestCorporateComplianceAuditRequestWithOptionalParams(t *testing.T) {
@@ -22,18 +22,18 @@ func TestCorporateComplianceAuditRequestWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Corporate.Compliance.Audits.Request(context.TODO(), jamesburvelocallaghaniiicitibankdemobusinessinc.CorporateComplianceAuditRequestParams{
-		AuditScope:           jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.CorporateComplianceAuditRequestParamsAuditScopeAllTransactions),
-		EndDate:              jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("2024-06-30"),
-		RegulatoryFrameworks: jamesburvelocallaghaniiicitibankdemobusinessinc.F([]jamesburvelocallaghaniiicitibankdemobusinessinc.CorporateComplianceAuditRequestParamsRegulatoryFramework{jamesburvelocallaghaniiicitibankdemobusinessinc.CorporateComplianceAuditRequestParamsRegulatoryFrameworkAml, jamesburvelocallaghaniiicitibankdemobusinessinc.CorporateComplianceAuditRequestParamsRegulatoryFrameworkPciDss}),
-		StartDate:            jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("2024-01-01"),
-		AdditionalContext:    jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](map[string]interface{}{}),
+	_, err := client.Corporate.Compliance.Audits.Request(context.TODO(), jocall3.CorporateComplianceAuditRequestParams{
+		AuditScope:           jocall3.F(jocall3.CorporateComplianceAuditRequestParamsAuditScopeAllTransactions),
+		EndDate:              jocall3.F[any]("2024-06-30"),
+		RegulatoryFrameworks: jocall3.F([]jocall3.CorporateComplianceAuditRequestParamsRegulatoryFramework{jocall3.CorporateComplianceAuditRequestParamsRegulatoryFrameworkAml, jocall3.CorporateComplianceAuditRequestParamsRegulatoryFrameworkPciDss}),
+		StartDate:            jocall3.F[any]("2024-01-01"),
+		AdditionalContext:    jocall3.F[any](map[string]interface{}{}),
 	})
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -50,12 +50,12 @@ func TestCorporateComplianceAuditGetReport(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Corporate.Compliance.Audits.GetReport(context.TODO(), "audit_corp_xyz789")
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

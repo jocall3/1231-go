@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package jamesburvelocallaghaniiicitibankdemobusinessinc_test
+package jocall3_test
 
 import (
 	"context"
@@ -8,9 +8,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/1231-go"
-	"github.com/stainless-sdks/1231-go/internal/testutil"
-	"github.com/stainless-sdks/1231-go/option"
+	"github.com/jocall3/1231-go"
+	"github.com/jocall3/1231-go/internal/testutil"
+	"github.com/jocall3/1231-go/option"
 )
 
 func TestNotificationListUserNotificationsWithOptionalParams(t *testing.T) {
@@ -22,17 +22,17 @@ func TestNotificationListUserNotificationsWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Notifications.ListUserNotifications(context.TODO(), jamesburvelocallaghaniiicitibankdemobusinessinc.NotificationListUserNotificationsParams{
-		Limit:    jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](map[string]interface{}{}),
-		Offset:   jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](map[string]interface{}{}),
-		Severity: jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.NotificationListUserNotificationsParamsSeverityHigh),
-		Status:   jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.NotificationListUserNotificationsParamsStatusUnread),
+	_, err := client.Notifications.ListUserNotifications(context.TODO(), jocall3.NotificationListUserNotificationsParams{
+		Limit:    jocall3.F[any](map[string]interface{}{}),
+		Offset:   jocall3.F[any](map[string]interface{}{}),
+		Severity: jocall3.F(jocall3.NotificationListUserNotificationsParamsSeverityHigh),
+		Status:   jocall3.F(jocall3.NotificationListUserNotificationsParamsStatusUnread),
 	})
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -49,12 +49,12 @@ func TestNotificationMarkAsRead(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Notifications.MarkAsRead(context.TODO(), "notif_budget_alert_002")
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

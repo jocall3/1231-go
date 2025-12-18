@@ -1,15 +1,15 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package jamesburvelocallaghaniiicitibankdemobusinessinc_test
+package jocall3_test
 
 import (
 	"context"
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/1231-go"
-	"github.com/stainless-sdks/1231-go/internal/testutil"
-	"github.com/stainless-sdks/1231-go/option"
+	"github.com/jocall3/1231-go"
+	"github.com/jocall3/1231-go/internal/testutil"
+	"github.com/jocall3/1231-go/option"
 )
 
 func TestUsage(t *testing.T) {
@@ -20,14 +20,14 @@ func TestUsage(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	t.Skip("Prism tests are disabled")
-	user, err := client.Users.Register(context.TODO(), jamesburvelocallaghaniiicitibankdemobusinessinc.UserRegisterParams{
-		Email:    jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("alice.w@example.com"),
-		Name:     jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("Alice Wonderland"),
-		Password: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("SecureP@ssw0rd2024!"),
+	user, err := client.Users.Register(context.TODO(), jocall3.UserRegisterParams{
+		Email:    jocall3.F[any]("alice.w@example.com"),
+		Name:     jocall3.F[any]("Alice Wonderland"),
+		Password: jocall3.F[any]("SecureP@ssw0rd2024!"),
 	})
 	if err != nil {
 		t.Error(err)

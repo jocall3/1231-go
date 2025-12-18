@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package jamesburvelocallaghaniiicitibankdemobusinessinc_test
+package jocall3_test
 
 import (
 	"context"
@@ -8,9 +8,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/1231-go"
-	"github.com/stainless-sdks/1231-go/internal/testutil"
-	"github.com/stainless-sdks/1231-go/option"
+	"github.com/jocall3/1231-go"
+	"github.com/jocall3/1231-go/internal/testutil"
+	"github.com/jocall3/1231-go/option"
 )
 
 func TestAIIncubatorListPitchesWithOptionalParams(t *testing.T) {
@@ -22,16 +22,16 @@ func TestAIIncubatorListPitchesWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.AI.Incubator.ListPitches(context.TODO(), jamesburvelocallaghaniiicitibankdemobusinessinc.AIIncubatorListPitchesParams{
-		Limit:  jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](map[string]interface{}{}),
-		Offset: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](map[string]interface{}{}),
-		Status: jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.AIIncubatorListPitchesParamsStatusFeedbackRequired),
+	_, err := client.AI.Incubator.ListPitches(context.TODO(), jocall3.AIIncubatorListPitchesParams{
+		Limit:  jocall3.F[any](map[string]interface{}{}),
+		Offset: jocall3.F[any](map[string]interface{}{}),
+		Status: jocall3.F(jocall3.AIIncubatorListPitchesParamsStatusFeedbackRequired),
 	})
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

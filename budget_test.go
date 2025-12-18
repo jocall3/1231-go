@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package jamesburvelocallaghaniiicitibankdemobusinessinc_test
+package jocall3_test
 
 import (
 	"context"
@@ -8,9 +8,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/1231-go"
-	"github.com/stainless-sdks/1231-go/internal/testutil"
-	"github.com/stainless-sdks/1231-go/option"
+	"github.com/jocall3/1231-go"
+	"github.com/jocall3/1231-go/internal/testutil"
+	"github.com/jocall3/1231-go/option"
 )
 
 func TestBudgetNewWithOptionalParams(t *testing.T) {
@@ -22,27 +22,27 @@ func TestBudgetNewWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Budgets.New(context.TODO(), jamesburvelocallaghaniiicitibankdemobusinessinc.BudgetNewParams{
-		EndDate:        jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("2024-09-30"),
-		Name:           jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("September Living Expenses"),
-		Period:         jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.BudgetNewParamsPeriodMonthly),
-		StartDate:      jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("2024-09-01"),
-		TotalAmount:    jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](2800),
-		AIAutoPopulate: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](true),
-		AlertThreshold: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](75),
-		Categories: jamesburvelocallaghaniiicitibankdemobusinessinc.F([]jamesburvelocallaghaniiicitibankdemobusinessinc.BudgetNewParamsCategory{{
-			Allocated: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](1500),
-			Name:      jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("Rent"),
+	_, err := client.Budgets.New(context.TODO(), jocall3.BudgetNewParams{
+		EndDate:        jocall3.F[any]("2024-09-30"),
+		Name:           jocall3.F[any]("September Living Expenses"),
+		Period:         jocall3.F(jocall3.BudgetNewParamsPeriodMonthly),
+		StartDate:      jocall3.F[any]("2024-09-01"),
+		TotalAmount:    jocall3.F[any](2800),
+		AIAutoPopulate: jocall3.F[any](true),
+		AlertThreshold: jocall3.F[any](75),
+		Categories: jocall3.F([]jocall3.BudgetNewParamsCategory{{
+			Allocated: jocall3.F[any](1500),
+			Name:      jocall3.F[any]("Rent"),
 		}, {
-			Allocated: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](400),
-			Name:      jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("Groceries"),
+			Allocated: jocall3.F[any](400),
+			Name:      jocall3.F[any]("Groceries"),
 		}}),
 	})
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -59,12 +59,12 @@ func TestBudgetGet(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Budgets.Get(context.TODO(), "budget_monthly_aug")
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -81,27 +81,27 @@ func TestBudgetUpdateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Budgets.Update(
 		context.TODO(),
 		"budget_monthly_aug",
-		jamesburvelocallaghaniiicitibankdemobusinessinc.BudgetUpdateParams{
-			AlertThreshold: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](85),
-			Categories: jamesburvelocallaghaniiicitibankdemobusinessinc.F([]jamesburvelocallaghaniiicitibankdemobusinessinc.BudgetUpdateParamsCategory{{
-				Allocated: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](550),
-				Name:      jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("Groceries"),
+		jocall3.BudgetUpdateParams{
+			AlertThreshold: jocall3.F[any](85),
+			Categories: jocall3.F([]jocall3.BudgetUpdateParamsCategory{{
+				Allocated: jocall3.F[any](550),
+				Name:      jocall3.F[any]("Groceries"),
 			}}),
-			EndDate:     jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("2024-08-31"),
-			Name:        jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("August 2024 Revised Household Budget"),
-			StartDate:   jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("2024-08-01"),
-			Status:      jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.BudgetUpdateParamsStatusActive),
-			TotalAmount: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](3200),
+			EndDate:     jocall3.F[any]("2024-08-31"),
+			Name:        jocall3.F[any]("August 2024 Revised Household Budget"),
+			StartDate:   jocall3.F[any]("2024-08-01"),
+			Status:      jocall3.F(jocall3.BudgetUpdateParamsStatusActive),
+			TotalAmount: jocall3.F[any](3200),
 		},
 	)
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -118,15 +118,15 @@ func TestBudgetListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Budgets.List(context.TODO(), jamesburvelocallaghaniiicitibankdemobusinessinc.BudgetListParams{
-		Limit:  jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](map[string]interface{}{}),
-		Offset: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](map[string]interface{}{}),
+	_, err := client.Budgets.List(context.TODO(), jocall3.BudgetListParams{
+		Limit:  jocall3.F[any](map[string]interface{}{}),
+		Offset: jocall3.F[any](map[string]interface{}{}),
 	})
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -143,12 +143,12 @@ func TestBudgetDelete(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	err := client.Budgets.Delete(context.TODO(), "budget_monthly_aug")
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

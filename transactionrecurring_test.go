@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package jamesburvelocallaghaniiicitibankdemobusinessinc_test
+package jocall3_test
 
 import (
 	"context"
@@ -8,9 +8,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/1231-go"
-	"github.com/stainless-sdks/1231-go/internal/testutil"
-	"github.com/stainless-sdks/1231-go/option"
+	"github.com/jocall3/1231-go"
+	"github.com/jocall3/1231-go/internal/testutil"
+	"github.com/jocall3/1231-go/option"
 )
 
 func TestTransactionRecurringNew(t *testing.T) {
@@ -22,20 +22,20 @@ func TestTransactionRecurringNew(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Transactions.Recurring.New(context.TODO(), jamesburvelocallaghaniiicitibankdemobusinessinc.TransactionRecurringNewParams{
-		Amount:          jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](55.5),
-		Category:        jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("Health & Fitness"),
-		Currency:        jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("USD"),
-		Description:     jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("New Gym Membership"),
-		Frequency:       jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.TransactionRecurringNewParamsFrequencyMonthly),
-		LinkedAccountID: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("acc_chase_checking_4567"),
-		StartDate:       jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("2024-09-01"),
+	_, err := client.Transactions.Recurring.New(context.TODO(), jocall3.TransactionRecurringNewParams{
+		Amount:          jocall3.F[any](55.5),
+		Category:        jocall3.F[any]("Health & Fitness"),
+		Currency:        jocall3.F[any]("USD"),
+		Description:     jocall3.F[any]("New Gym Membership"),
+		Frequency:       jocall3.F(jocall3.TransactionRecurringNewParamsFrequencyMonthly),
+		LinkedAccountID: jocall3.F[any]("acc_chase_checking_4567"),
+		StartDate:       jocall3.F[any]("2024-09-01"),
 	})
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -52,15 +52,15 @@ func TestTransactionRecurringListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Transactions.Recurring.List(context.TODO(), jamesburvelocallaghaniiicitibankdemobusinessinc.TransactionRecurringListParams{
-		Limit:  jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](map[string]interface{}{}),
-		Offset: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](map[string]interface{}{}),
+	_, err := client.Transactions.Recurring.List(context.TODO(), jocall3.TransactionRecurringListParams{
+		Limit:  jocall3.F[any](map[string]interface{}{}),
+		Offset: jocall3.F[any](map[string]interface{}{}),
 	})
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

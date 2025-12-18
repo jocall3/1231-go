@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package jamesburvelocallaghaniiicitibankdemobusinessinc_test
+package jocall3_test
 
 import (
 	"context"
@@ -8,9 +8,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/1231-go"
-	"github.com/stainless-sdks/1231-go/internal/testutil"
-	"github.com/stainless-sdks/1231-go/option"
+	"github.com/jocall3/1231-go"
+	"github.com/jocall3/1231-go/internal/testutil"
+	"github.com/jocall3/1231-go/option"
 )
 
 func TestDeveloperWebhookNewWithOptionalParams(t *testing.T) {
@@ -22,16 +22,16 @@ func TestDeveloperWebhookNewWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Developers.Webhooks.New(context.TODO(), jamesburvelocallaghaniiicitibankdemobusinessinc.DeveloperWebhookNewParams{
-		CallbackURL: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("https://my-analytics-app.com/webhooks/transactions"),
-		Events:      jamesburvelocallaghaniiicitibankdemobusinessinc.F([]interface{}{"transaction.created", "transaction.updated"}),
-		Secret:      jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("my_custom_webhook_secret_123"),
+	_, err := client.Developers.Webhooks.New(context.TODO(), jocall3.DeveloperWebhookNewParams{
+		CallbackURL: jocall3.F[any]("https://my-analytics-app.com/webhooks/transactions"),
+		Events:      jocall3.F([]interface{}{"transaction.created", "transaction.updated"}),
+		Secret:      jocall3.F[any]("my_custom_webhook_secret_123"),
 	})
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -48,20 +48,20 @@ func TestDeveloperWebhookUpdateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Developers.Webhooks.Update(
 		context.TODO(),
 		"whsub_devtool_finance_events",
-		jamesburvelocallaghaniiicitibankdemobusinessinc.DeveloperWebhookUpdateParams{
-			CallbackURL: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("https://my-new-app.com/webhooks/demobank-events"),
-			Events:      jamesburvelocallaghaniiicitibankdemobusinessinc.F([]interface{}{"transaction.created", "user.login_failed"}),
-			Status:      jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.DeveloperWebhookUpdateParamsStatusPaused),
+		jocall3.DeveloperWebhookUpdateParams{
+			CallbackURL: jocall3.F[any]("https://my-new-app.com/webhooks/demobank-events"),
+			Events:      jocall3.F([]interface{}{"transaction.created", "user.login_failed"}),
+			Status:      jocall3.F(jocall3.DeveloperWebhookUpdateParamsStatusPaused),
 		},
 	)
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -78,15 +78,15 @@ func TestDeveloperWebhookListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Developers.Webhooks.List(context.TODO(), jamesburvelocallaghaniiicitibankdemobusinessinc.DeveloperWebhookListParams{
-		Limit:  jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](map[string]interface{}{}),
-		Offset: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](map[string]interface{}{}),
+	_, err := client.Developers.Webhooks.List(context.TODO(), jocall3.DeveloperWebhookListParams{
+		Limit:  jocall3.F[any](map[string]interface{}{}),
+		Offset: jocall3.F[any](map[string]interface{}{}),
 	})
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -103,12 +103,12 @@ func TestDeveloperWebhookDelete(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	err := client.Developers.Webhooks.Delete(context.TODO(), "whsub_devtool_finance_events")
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

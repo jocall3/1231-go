@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package jamesburvelocallaghaniiicitibankdemobusinessinc_test
+package jocall3_test
 
 import (
 	"context"
@@ -8,9 +8,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/1231-go"
-	"github.com/stainless-sdks/1231-go/internal/testutil"
-	"github.com/stainless-sdks/1231-go/option"
+	"github.com/jocall3/1231-go"
+	"github.com/jocall3/1231-go/internal/testutil"
+	"github.com/jocall3/1231-go/option"
 )
 
 func TestSustainabilityPurchaseCarbonOffsets(t *testing.T) {
@@ -22,16 +22,16 @@ func TestSustainabilityPurchaseCarbonOffsets(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Sustainability.PurchaseCarbonOffsets(context.TODO(), jamesburvelocallaghaniiicitibankdemobusinessinc.SustainabilityPurchaseCarbonOffsetsParams{
-		AmountKgCo2e:     jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](500),
-		OffsetProject:    jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("Verified Carbon Standard Project X"),
-		PaymentAccountID: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("acc_chase_checking_4567"),
+	_, err := client.Sustainability.PurchaseCarbonOffsets(context.TODO(), jocall3.SustainabilityPurchaseCarbonOffsetsParams{
+		AmountKgCo2e:     jocall3.F[any](500),
+		OffsetProject:    jocall3.F[any]("Verified Carbon Standard Project X"),
+		PaymentAccountID: jocall3.F[any]("acc_chase_checking_4567"),
 	})
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -48,12 +48,12 @@ func TestSustainabilityGetCarbonFootprint(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Sustainability.GetCarbonFootprint(context.TODO())
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

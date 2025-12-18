@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package jamesburvelocallaghaniiicitibankdemobusinessinc_test
+package jocall3_test
 
 import (
 	"context"
@@ -8,9 +8,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/1231-go"
-	"github.com/stainless-sdks/1231-go/internal/testutil"
-	"github.com/stainless-sdks/1231-go/option"
+	"github.com/jocall3/1231-go"
+	"github.com/jocall3/1231-go/internal/testutil"
+	"github.com/jocall3/1231-go/option"
 )
 
 func TestAccountOverdraftSettingGetOverdraftSettings(t *testing.T) {
@@ -22,12 +22,12 @@ func TestAccountOverdraftSettingGetOverdraftSettings(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Accounts.OverdraftSettings.GetOverdraftSettings(context.TODO(), "acc_chase_checking_4567")
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -44,22 +44,22 @@ func TestAccountOverdraftSettingUpdateOverdraftSettingsWithOptionalParams(t *tes
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Accounts.OverdraftSettings.UpdateOverdraftSettings(
 		context.TODO(),
 		"acc_chase_checking_4567",
-		jamesburvelocallaghaniiicitibankdemobusinessinc.AccountOverdraftSettingUpdateOverdraftSettingsParams{
-			Enabled:                jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](false),
-			FeePreference:          jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.AccountOverdraftSettingUpdateOverdraftSettingsParamsFeePreferenceDeclineIfOverLimit),
-			LinkedSavingsAccountID: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("acc_new_savings_5678"),
-			LinkToSavings:          jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](false),
-			ProtectionLimit:        jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](750),
+		jocall3.AccountOverdraftSettingUpdateOverdraftSettingsParams{
+			Enabled:                jocall3.F[any](false),
+			FeePreference:          jocall3.F(jocall3.AccountOverdraftSettingUpdateOverdraftSettingsParamsFeePreferenceDeclineIfOverLimit),
+			LinkedSavingsAccountID: jocall3.F[any]("acc_new_savings_5678"),
+			LinkToSavings:          jocall3.F[any](false),
+			ProtectionLimit:        jocall3.F[any](750),
 		},
 	)
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

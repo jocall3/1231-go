@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package jamesburvelocallaghaniiicitibankdemobusinessinc_test
+package jocall3_test
 
 import (
 	"context"
@@ -8,9 +8,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/1231-go"
-	"github.com/stainless-sdks/1231-go/internal/testutil"
-	"github.com/stainless-sdks/1231-go/option"
+	"github.com/jocall3/1231-go"
+	"github.com/jocall3/1231-go/internal/testutil"
+	"github.com/jocall3/1231-go/option"
 )
 
 func TestCorporateCardListWithOptionalParams(t *testing.T) {
@@ -22,15 +22,15 @@ func TestCorporateCardListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Corporate.Cards.List(context.TODO(), jamesburvelocallaghaniiicitibankdemobusinessinc.CorporateCardListParams{
-		Limit:  jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](map[string]interface{}{}),
-		Offset: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](map[string]interface{}{}),
+	_, err := client.Corporate.Cards.List(context.TODO(), jocall3.CorporateCardListParams{
+		Limit:  jocall3.F[any](map[string]interface{}{}),
+		Offset: jocall3.F[any](map[string]interface{}{}),
 	})
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -47,29 +47,29 @@ func TestCorporateCardNewVirtualWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Corporate.Cards.NewVirtual(context.TODO(), jamesburvelocallaghaniiicitibankdemobusinessinc.CorporateCardNewVirtualParams{
-		Controls: jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.CorporateCardControlsParam{
-			AtmWithdrawals:               jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](false),
-			ContactlessPayments:          jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](false),
-			DailyLimit:                   jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](500),
-			InternationalTransactions:    jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](false),
-			MerchantCategoryRestrictions: jamesburvelocallaghaniiicitibankdemobusinessinc.F([]interface{}{"Advertising"}),
-			MonthlyLimit:                 jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](1000),
-			OnlineTransactions:           jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](true),
-			SingleTransactionLimit:       jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](200),
-			VendorRestrictions:           jamesburvelocallaghaniiicitibankdemobusinessinc.F([]interface{}{"Facebook Ads", "Google Ads"}),
+	_, err := client.Corporate.Cards.NewVirtual(context.TODO(), jocall3.CorporateCardNewVirtualParams{
+		Controls: jocall3.F(jocall3.CorporateCardControlsParam{
+			AtmWithdrawals:               jocall3.F[any](false),
+			ContactlessPayments:          jocall3.F[any](false),
+			DailyLimit:                   jocall3.F[any](500),
+			InternationalTransactions:    jocall3.F[any](false),
+			MerchantCategoryRestrictions: jocall3.F([]interface{}{"Advertising"}),
+			MonthlyLimit:                 jocall3.F[any](1000),
+			OnlineTransactions:           jocall3.F[any](true),
+			SingleTransactionLimit:       jocall3.F[any](200),
+			VendorRestrictions:           jocall3.F([]interface{}{"Facebook Ads", "Google Ads"}),
 		}),
-		ExpirationDate:       jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("2025-12-31"),
-		HolderName:           jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("Marketing Campaign Q4"),
-		Purpose:              jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("Online advertising for Q4 campaigns"),
-		AssociatedEmployeeID: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("emp_marketing_01"),
-		SpendingPolicyID:     jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("policy_marketing_fixed"),
+		ExpirationDate:       jocall3.F[any]("2025-12-31"),
+		HolderName:           jocall3.F[any]("Marketing Campaign Q4"),
+		Purpose:              jocall3.F[any]("Online advertising for Q4 campaigns"),
+		AssociatedEmployeeID: jocall3.F[any]("emp_marketing_01"),
+		SpendingPolicyID:     jocall3.F[any]("policy_marketing_fixed"),
 	})
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -86,18 +86,18 @@ func TestCorporateCardFreeze(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Corporate.Cards.Freeze(
 		context.TODO(),
 		"corp_card_xyz987654",
-		jamesburvelocallaghaniiicitibankdemobusinessinc.CorporateCardFreezeParams{
-			Freeze: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](true),
+		jocall3.CorporateCardFreezeParams{
+			Freeze: jocall3.F[any](true),
 		},
 	)
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -114,21 +114,21 @@ func TestCorporateCardListTransactionsWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Corporate.Cards.ListTransactions(
 		context.TODO(),
 		"corp_card_xyz987654",
-		jamesburvelocallaghaniiicitibankdemobusinessinc.CorporateCardListTransactionsParams{
-			EndDate:   jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("2024-12-31"),
-			Limit:     jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](map[string]interface{}{}),
-			Offset:    jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](map[string]interface{}{}),
-			StartDate: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("2024-01-01"),
+		jocall3.CorporateCardListTransactionsParams{
+			EndDate:   jocall3.F[any]("2024-12-31"),
+			Limit:     jocall3.F[any](map[string]interface{}{}),
+			Offset:    jocall3.F[any](map[string]interface{}{}),
+			StartDate: jocall3.F[any]("2024-01-01"),
 		},
 	)
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -145,28 +145,28 @@ func TestCorporateCardUpdateControlsWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Corporate.Cards.UpdateControls(
 		context.TODO(),
 		"corp_card_xyz987654",
-		jamesburvelocallaghaniiicitibankdemobusinessinc.CorporateCardUpdateControlsParams{
-			CorporateCardControls: jamesburvelocallaghaniiicitibankdemobusinessinc.CorporateCardControlsParam{
-				AtmWithdrawals:               jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](true),
-				ContactlessPayments:          jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](true),
-				DailyLimit:                   jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](750),
-				InternationalTransactions:    jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](true),
-				MerchantCategoryRestrictions: jamesburvelocallaghaniiicitibankdemobusinessinc.F([]interface{}{"Software Subscriptions", "Conferences"}),
-				MonthlyLimit:                 jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](3000),
-				OnlineTransactions:           jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](true),
-				SingleTransactionLimit:       jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](1000),
-				VendorRestrictions:           jamesburvelocallaghaniiicitibankdemobusinessinc.F([]interface{}{"Amazon", "Uber"}),
+		jocall3.CorporateCardUpdateControlsParams{
+			CorporateCardControls: jocall3.CorporateCardControlsParam{
+				AtmWithdrawals:               jocall3.F[any](true),
+				ContactlessPayments:          jocall3.F[any](true),
+				DailyLimit:                   jocall3.F[any](750),
+				InternationalTransactions:    jocall3.F[any](true),
+				MerchantCategoryRestrictions: jocall3.F([]interface{}{"Software Subscriptions", "Conferences"}),
+				MonthlyLimit:                 jocall3.F[any](3000),
+				OnlineTransactions:           jocall3.F[any](true),
+				SingleTransactionLimit:       jocall3.F[any](1000),
+				VendorRestrictions:           jocall3.F([]interface{}{"Amazon", "Uber"}),
 			},
 		},
 	)
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

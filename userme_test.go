@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package jamesburvelocallaghaniiicitibankdemobusinessinc_test
+package jocall3_test
 
 import (
 	"context"
@@ -8,9 +8,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/1231-go"
-	"github.com/stainless-sdks/1231-go/internal/testutil"
-	"github.com/stainless-sdks/1231-go/option"
+	"github.com/jocall3/1231-go"
+	"github.com/jocall3/1231-go/internal/testutil"
+	"github.com/jocall3/1231-go/option"
 )
 
 func TestUserMeGet(t *testing.T) {
@@ -22,12 +22,12 @@ func TestUserMeGet(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Users.Me.Get(context.TODO())
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -44,35 +44,35 @@ func TestUserMeUpdateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Users.Me.Update(context.TODO(), jamesburvelocallaghaniiicitibankdemobusinessinc.UserMeUpdateParams{
-		Address: jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.AddressParam{
-			City:    jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("Anytown"),
-			Country: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("USA"),
-			State:   jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("CA"),
-			Street:  jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("123 Main St"),
-			Zip:     jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("90210"),
+	_, err := client.Users.Me.Update(context.TODO(), jocall3.UserMeUpdateParams{
+		Address: jocall3.F(jocall3.AddressParam{
+			City:    jocall3.F[any]("Anytown"),
+			Country: jocall3.F[any]("USA"),
+			State:   jocall3.F[any]("CA"),
+			Street:  jocall3.F[any]("123 Main St"),
+			Zip:     jocall3.F[any]("90210"),
 		}),
-		Name:  jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("Quantum Visionary Pro"),
-		Phone: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("+1-555-999-0000"),
-		Preferences: jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.UserPreferencesParam{
-			AIInteractionMode:  jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.UserPreferencesAIInteractionModeBalanced),
-			DataSharingConsent: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](true),
-			NotificationChannels: jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.UserPreferencesNotificationChannelsParam{
-				Email: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](true),
-				InApp: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](true),
-				Push:  jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](true),
-				SMS:   jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](false),
+		Name:  jocall3.F[any]("Quantum Visionary Pro"),
+		Phone: jocall3.F[any]("+1-555-999-0000"),
+		Preferences: jocall3.F(jocall3.UserPreferencesParam{
+			AIInteractionMode:  jocall3.F(jocall3.UserPreferencesAIInteractionModeBalanced),
+			DataSharingConsent: jocall3.F[any](true),
+			NotificationChannels: jocall3.F(jocall3.UserPreferencesNotificationChannelsParam{
+				Email: jocall3.F[any](true),
+				InApp: jocall3.F[any](true),
+				Push:  jocall3.F[any](true),
+				SMS:   jocall3.F[any](false),
 			}),
-			PreferredLanguage:   jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("en-US"),
-			Theme:               jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("Dark-Quantum"),
-			TransactionGrouping: jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.UserPreferencesTransactionGroupingCategory),
+			PreferredLanguage:   jocall3.F[any]("en-US"),
+			Theme:               jocall3.F[any]("Dark-Quantum"),
+			TransactionGrouping: jocall3.F(jocall3.UserPreferencesTransactionGroupingCategory),
 		}),
 	})
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

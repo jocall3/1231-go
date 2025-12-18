@@ -1,6 +1,6 @@
 # 1231 Go API Library
 
-<a href="https://pkg.go.dev/github.com/stainless-sdks/1231-go"><img src="https://pkg.go.dev/badge/github.com/stainless-sdks/1231-go.svg" alt="Go Reference"></a>
+<a href="https://pkg.go.dev/github.com/jocall3/1231-go"><img src="https://pkg.go.dev/badge/github.com/jocall3/1231-go.svg" alt="Go Reference"></a>
 
 The 1231 Go library provides convenient access to the 1231 REST API
 from applications written in Go.
@@ -9,17 +9,25 @@ It is generated with [Stainless](https://www.stainless.com/).
 
 ## Installation
 
+<!-- x-release-please-start-version -->
+
 ```go
 import (
-	"github.com/stainless-sdks/1231-go" // imported as jamesburvelocallaghaniiicitibankdemobusinessinc
+	"github.com/jocall3/1231-go" // imported as jocall3
 )
 ```
 
+<!-- x-release-please-end -->
+
 Or to pin the version:
 
+<!-- x-release-please-start-version -->
+
 ```sh
-go get -u 'github.com/stainless-sdks/1231-go@v0.0.1'
+go get -u 'github.com/jocall3/1231-go@v0.1.0'
 ```
+
+<!-- x-release-please-end -->
 
 ## Requirements
 
@@ -36,15 +44,15 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/stainless-sdks/1231-go"
+	"github.com/jocall3/1231-go"
 )
 
 func main() {
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient()
-	user, err := client.Users.Register(context.TODO(), jamesburvelocallaghaniiicitibankdemobusinessinc.UserRegisterParams{
-		Email:    jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("alice.w@example.com"),
-		Name:     jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("Alice Wonderland"),
-		Password: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("SecureP@ssw0rd2024!"),
+	client := jocall3.NewClient()
+	user, err := client.Users.Register(context.TODO(), jocall3.UserRegisterParams{
+		Email:    jocall3.F[any]("alice.w@example.com"),
+		Name:     jocall3.F[any]("Alice Wonderland"),
+		Password: jocall3.F[any]("SecureP@ssw0rd2024!"),
 	})
 	if err != nil {
 		panic(err.Error())
@@ -68,18 +76,18 @@ To send a null, use `Null[T]()`, and to send a nonconforming value, use `Raw[T](
 
 ```go
 params := FooParams{
-	Name: jamesburvelocallaghaniiicitibankdemobusinessinc.F("hello"),
+	Name: jocall3.F("hello"),
 
 	// Explicitly send `"description": null`
-	Description: jamesburvelocallaghaniiicitibankdemobusinessinc.Null[string](),
+	Description: jocall3.Null[string](),
 
-	Point: jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.Point{
-		X: jamesburvelocallaghaniiicitibankdemobusinessinc.Int(0),
-		Y: jamesburvelocallaghaniiicitibankdemobusinessinc.Int(1),
+	Point: jocall3.F(jocall3.Point{
+		X: jocall3.Int(0),
+		Y: jocall3.Int(1),
 
 		// In cases where the API specifies a given type,
 		// but you want to send something else, use `Raw`:
-		Z: jamesburvelocallaghaniiicitibankdemobusinessinc.Raw[int64](0.01), // sends a float
+		Z: jocall3.Raw[int64](0.01), // sends a float
 	}),
 }
 ```
@@ -133,7 +141,7 @@ This library uses the functional options pattern. Functions defined in the
 requests. For example:
 
 ```go
-client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+client := jocall3.NewClient(
 	// Adds a header to every request made by the client
 	option.WithHeader("X-Some-Header", "custom_header_info"),
 )
@@ -146,7 +154,7 @@ client.Users.Register(context.TODO(), ...,
 )
 ```
 
-See the [full list of request options](https://pkg.go.dev/github.com/stainless-sdks/1231-go/option).
+See the [full list of request options](https://pkg.go.dev/github.com/jocall3/1231-go/option).
 
 ### Pagination
 
@@ -160,20 +168,20 @@ with additional helper methods like `.GetNextPage()`, e.g.:
 ### Errors
 
 When the API returns a non-success status code, we return an error with type
-`*jamesburvelocallaghaniiicitibankdemobusinessinc.Error`. This contains the `StatusCode`, `*http.Request`, and
+`*jocall3.Error`. This contains the `StatusCode`, `*http.Request`, and
 `*http.Response` values of the request, as well as the JSON of the error body
 (much like other response objects in the SDK).
 
 To handle errors, we recommend that you use the `errors.As` pattern:
 
 ```go
-_, err := client.Users.Register(context.TODO(), jamesburvelocallaghaniiicitibankdemobusinessinc.UserRegisterParams{
-	Email:    jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("alice.w@example.com"),
-	Name:     jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("Alice Wonderland"),
-	Password: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("SecureP@ssw0rd2024!"),
+_, err := client.Users.Register(context.TODO(), jocall3.UserRegisterParams{
+	Email:    jocall3.F[any]("alice.w@example.com"),
+	Name:     jocall3.F[any]("Alice Wonderland"),
+	Password: jocall3.F[any]("SecureP@ssw0rd2024!"),
 })
 if err != nil {
-	var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+	var apierr *jocall3.Error
 	if errors.As(err, &apierr) {
 		println(string(apierr.DumpRequest(true)))  // Prints the serialized HTTP request
 		println(string(apierr.DumpResponse(true))) // Prints the serialized HTTP response
@@ -198,10 +206,10 @@ ctx, cancel := context.WithTimeout(context.Background(), 5*time.Minute)
 defer cancel()
 client.Users.Register(
 	ctx,
-	jamesburvelocallaghaniiicitibankdemobusinessinc.UserRegisterParams{
-		Email:    jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("alice.w@example.com"),
-		Name:     jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("Alice Wonderland"),
-		Password: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("SecureP@ssw0rd2024!"),
+	jocall3.UserRegisterParams{
+		Email:    jocall3.F[any]("alice.w@example.com"),
+		Name:     jocall3.F[any]("Alice Wonderland"),
+		Password: jocall3.F[any]("SecureP@ssw0rd2024!"),
 	},
 	// This sets the per-retry timeout
 	option.WithRequestTimeout(20*time.Second),
@@ -218,7 +226,7 @@ The file name and content-type can be customized by implementing `Name() string`
 string` on the run-time type of `io.Reader`. Note that `os.File` implements `Name() string`, so a
 file returned by `os.Open` will be sent with the file name on disk.
 
-We also provide a helper `jamesburvelocallaghaniiicitibankdemobusinessinc.FileParam(reader io.Reader, filename string, contentType string)`
+We also provide a helper `jocall3.FileParam(reader io.Reader, filename string, contentType string)`
 which can be used to wrap any `io.Reader` with the appropriate file name and content type.
 
 ### Retries
@@ -231,17 +239,17 @@ You can use the `WithMaxRetries` option to configure or disable this:
 
 ```go
 // Configure the default for all requests:
-client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+client := jocall3.NewClient(
 	option.WithMaxRetries(0), // default is 2
 )
 
 // Override per-request:
 client.Users.Register(
 	context.TODO(),
-	jamesburvelocallaghaniiicitibankdemobusinessinc.UserRegisterParams{
-		Email:    jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("alice.w@example.com"),
-		Name:     jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("Alice Wonderland"),
-		Password: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("SecureP@ssw0rd2024!"),
+	jocall3.UserRegisterParams{
+		Email:    jocall3.F[any]("alice.w@example.com"),
+		Name:     jocall3.F[any]("Alice Wonderland"),
+		Password: jocall3.F[any]("SecureP@ssw0rd2024!"),
 	},
 	option.WithMaxRetries(5),
 )
@@ -257,10 +265,10 @@ you need to examine response headers, status codes, or other details.
 var response *http.Response
 user, err := client.Users.Register(
 	context.TODO(),
-	jamesburvelocallaghaniiicitibankdemobusinessinc.UserRegisterParams{
-		Email:    jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("alice.w@example.com"),
-		Name:     jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("Alice Wonderland"),
-		Password: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("SecureP@ssw0rd2024!"),
+	jocall3.UserRegisterParams{
+		Email:    jocall3.F[any]("alice.w@example.com"),
+		Name:     jocall3.F[any]("Alice Wonderland"),
+		Password: jocall3.F[any]("SecureP@ssw0rd2024!"),
 	},
 	option.WithResponseInto(&response),
 )
@@ -306,9 +314,9 @@ or the `option.WithJSONSet()` methods.
 
 ```go
 params := FooNewParams{
-    ID:   jamesburvelocallaghaniiicitibankdemobusinessinc.F("id_xxxx"),
-    Data: jamesburvelocallaghaniiicitibankdemobusinessinc.F(FooNewParamsData{
-        FirstName: jamesburvelocallaghaniiicitibankdemobusinessinc.F("John"),
+    ID:   jocall3.F("id_xxxx"),
+    Data: jocall3.F(FooNewParamsData{
+        FirstName: jocall3.F("John"),
     }),
 }
 client.Foo.New(context.Background(), params, option.WithJSONSet("data.last_name", "Doe"))
@@ -343,7 +351,7 @@ func Logger(req *http.Request, next option.MiddlewareNext) (res *http.Response, 
     return res, err
 }
 
-client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+client := jocall3.NewClient(
 	option.WithMiddleware(Logger),
 )
 ```
@@ -368,7 +376,7 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/stainless-sdks/1231-go/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/jocall3/1231-go/issues) with questions, bugs, or suggestions.
 
 ## Contributing
 

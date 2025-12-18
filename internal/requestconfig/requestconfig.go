@@ -18,11 +18,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/stainless-sdks/1231-go/internal"
-	"github.com/stainless-sdks/1231-go/internal/apierror"
-	"github.com/stainless-sdks/1231-go/internal/apiform"
-	"github.com/stainless-sdks/1231-go/internal/apiquery"
-	"github.com/stainless-sdks/1231-go/internal/param"
+	"github.com/jocall3/1231-go/internal"
+	"github.com/jocall3/1231-go/internal/apierror"
+	"github.com/jocall3/1231-go/internal/apiform"
+	"github.com/jocall3/1231-go/internal/apiquery"
+	"github.com/jocall3/1231-go/internal/param"
 )
 
 func getDefaultHeaders() map[string]string {

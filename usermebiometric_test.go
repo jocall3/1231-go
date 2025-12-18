@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package jamesburvelocallaghaniiicitibankdemobusinessinc_test
+package jocall3_test
 
 import (
 	"context"
@@ -8,9 +8,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/1231-go"
-	"github.com/stainless-sdks/1231-go/internal/testutil"
-	"github.com/stainless-sdks/1231-go/option"
+	"github.com/jocall3/1231-go"
+	"github.com/jocall3/1231-go/internal/testutil"
+	"github.com/jocall3/1231-go/option"
 )
 
 func TestUserMeBiometricDeregister(t *testing.T) {
@@ -22,12 +22,12 @@ func TestUserMeBiometricDeregister(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	err := client.Users.Me.Biometrics.Deregister(context.TODO())
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -44,17 +44,17 @@ func TestUserMeBiometricEnrollWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Users.Me.Biometrics.Enroll(context.TODO(), jamesburvelocallaghaniiicitibankdemobusinessinc.UserMeBiometricEnrollParams{
-		BiometricSignature: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("base64encoded_facial_template_for_enrollment"),
-		BiometricType:      jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.UserMeBiometricEnrollParamsBiometricTypeFacialRecognition),
-		DeviceID:           jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("dev_mobile_ios_aabbcc"),
-		DeviceName:         jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("My Primary iPhone"),
+	_, err := client.Users.Me.Biometrics.Enroll(context.TODO(), jocall3.UserMeBiometricEnrollParams{
+		BiometricSignature: jocall3.F[any]("base64encoded_facial_template_for_enrollment"),
+		BiometricType:      jocall3.F(jocall3.UserMeBiometricEnrollParamsBiometricTypeFacialRecognition),
+		DeviceID:           jocall3.F[any]("dev_mobile_ios_aabbcc"),
+		DeviceName:         jocall3.F[any]("My Primary iPhone"),
 	})
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -71,12 +71,12 @@ func TestUserMeBiometricStatus(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Users.Me.Biometrics.Status(context.TODO())
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -93,16 +93,16 @@ func TestUserMeBiometricVerify(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Users.Me.Biometrics.Verify(context.TODO(), jamesburvelocallaghaniiicitibankdemobusinessinc.UserMeBiometricVerifyParams{
-		BiometricSignature: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("base64encoded_one_time_fingerprint_proof"),
-		BiometricType:      jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.UserMeBiometricVerifyParamsBiometricTypeFingerprint),
-		DeviceID:           jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("dev_mobile_android_ddeeff"),
+	_, err := client.Users.Me.Biometrics.Verify(context.TODO(), jocall3.UserMeBiometricVerifyParams{
+		BiometricSignature: jocall3.F[any]("base64encoded_one_time_fingerprint_proof"),
+		BiometricType:      jocall3.F(jocall3.UserMeBiometricVerifyParamsBiometricTypeFingerprint),
+		DeviceID:           jocall3.F[any]("dev_mobile_android_ddeeff"),
 	})
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

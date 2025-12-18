@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package jamesburvelocallaghaniiicitibankdemobusinessinc_test
+package jocall3_test
 
 import (
 	"context"
@@ -8,9 +8,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/1231-go"
-	"github.com/stainless-sdks/1231-go/internal/testutil"
-	"github.com/stainless-sdks/1231-go/option"
+	"github.com/jocall3/1231-go"
+	"github.com/jocall3/1231-go/internal/testutil"
+	"github.com/jocall3/1231-go/option"
 )
 
 func TestLendingApplicationGet(t *testing.T) {
@@ -22,12 +22,12 @@ func TestLendingApplicationGet(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Lending.Applications.Get(context.TODO(), "loan_app_creditflow-123")
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -44,22 +44,22 @@ func TestLendingApplicationSubmitWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Lending.Applications.Submit(context.TODO(), jamesburvelocallaghaniiicitibankdemobusinessinc.LendingApplicationSubmitParams{
-		LoanAmount:          jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](10000),
-		LoanPurpose:         jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.LendingApplicationSubmitParamsLoanPurposeHomeImprovement),
-		RepaymentTermMonths: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](36),
-		AdditionalNotes:     jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("Funds needed to replace a broken HVAC system."),
-		CoApplicant: jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.LendingApplicationSubmitParamsCoApplicant{
-			Email:  jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("jane.doe@example.com"),
-			Income: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](75000),
-			Name:   jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("Jane Doe"),
+	_, err := client.Lending.Applications.Submit(context.TODO(), jocall3.LendingApplicationSubmitParams{
+		LoanAmount:          jocall3.F[any](10000),
+		LoanPurpose:         jocall3.F(jocall3.LendingApplicationSubmitParamsLoanPurposeHomeImprovement),
+		RepaymentTermMonths: jocall3.F[any](36),
+		AdditionalNotes:     jocall3.F[any]("Funds needed to replace a broken HVAC system."),
+		CoApplicant: jocall3.F(jocall3.LendingApplicationSubmitParamsCoApplicant{
+			Email:  jocall3.F[any]("jane.doe@example.com"),
+			Income: jocall3.F[any](75000),
+			Name:   jocall3.F[any]("Jane Doe"),
 		}),
 	})
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package jamesburvelocallaghaniiicitibankdemobusinessinc_test
+package jocall3_test
 
 import (
 	"context"
@@ -8,9 +8,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/1231-go"
-	"github.com/stainless-sdks/1231-go/internal/testutil"
-	"github.com/stainless-sdks/1231-go/option"
+	"github.com/jocall3/1231-go"
+	"github.com/jocall3/1231-go/internal/testutil"
+	"github.com/jocall3/1231-go/option"
 )
 
 func TestAccountLinkWithOptionalParams(t *testing.T) {
@@ -22,17 +22,17 @@ func TestAccountLinkWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Accounts.Link(context.TODO(), jamesburvelocallaghaniiicitibankdemobusinessinc.AccountLinkParams{
-		CountryCode:        jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("US"),
-		InstitutionName:    jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("Bank of America"),
-		ProviderIdentifier: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](map[string]interface{}{}),
-		RedirectUri:        jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](map[string]interface{}{}),
+	_, err := client.Accounts.Link(context.TODO(), jocall3.AccountLinkParams{
+		CountryCode:        jocall3.F[any]("US"),
+		InstitutionName:    jocall3.F[any]("Bank of America"),
+		ProviderIdentifier: jocall3.F[any](map[string]interface{}{}),
+		RedirectUri:        jocall3.F[any](map[string]interface{}{}),
 	})
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -49,12 +49,12 @@ func TestAccountGetDetails(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Accounts.GetDetails(context.TODO(), "acc_chase_checking_4567")
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -71,15 +71,15 @@ func TestAccountGetMeWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Accounts.GetMe(context.TODO(), jamesburvelocallaghaniiicitibankdemobusinessinc.AccountGetMeParams{
-		Limit:  jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](map[string]interface{}{}),
-		Offset: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](map[string]interface{}{}),
+	_, err := client.Accounts.GetMe(context.TODO(), jocall3.AccountGetMeParams{
+		Limit:  jocall3.F[any](map[string]interface{}{}),
+		Offset: jocall3.F[any](map[string]interface{}{}),
 	})
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -96,20 +96,20 @@ func TestAccountGetStatementsWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Accounts.GetStatements(
 		context.TODO(),
 		"acc_chase_checking_4567",
-		jamesburvelocallaghaniiicitibankdemobusinessinc.AccountGetStatementsParams{
-			Month:  jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](7),
-			Year:   jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](2024),
-			Format: jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.AccountGetStatementsParamsFormatPdf),
+		jocall3.AccountGetStatementsParams{
+			Month:  jocall3.F[any](7),
+			Year:   jocall3.F[any](2024),
+			Format: jocall3.F(jocall3.AccountGetStatementsParamsFormatPdf),
 		},
 	)
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

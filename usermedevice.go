@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package jamesburvelocallaghaniiicitibankdemobusinessinc
+package jocall3
 
 import (
 	"context"
@@ -9,11 +9,11 @@ import (
 	"net/url"
 	"slices"
 
-	"github.com/stainless-sdks/1231-go/internal/apijson"
-	"github.com/stainless-sdks/1231-go/internal/apiquery"
-	"github.com/stainless-sdks/1231-go/internal/param"
-	"github.com/stainless-sdks/1231-go/internal/requestconfig"
-	"github.com/stainless-sdks/1231-go/option"
+	"github.com/jocall3/1231-go/internal/apijson"
+	"github.com/jocall3/1231-go/internal/apiquery"
+	"github.com/jocall3/1231-go/internal/param"
+	"github.com/jocall3/1231-go/internal/requestconfig"
+	"github.com/jocall3/1231-go/option"
 )
 
 // UserMeDeviceService contains methods and other services that help with

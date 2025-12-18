@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package jamesburvelocallaghaniiicitibankdemobusinessinc_test
+package jocall3_test
 
 import (
 	"context"
@@ -8,9 +8,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/1231-go"
-	"github.com/stainless-sdks/1231-go/internal/testutil"
-	"github.com/stainless-sdks/1231-go/option"
+	"github.com/jocall3/1231-go"
+	"github.com/jocall3/1231-go/internal/testutil"
+	"github.com/jocall3/1231-go/option"
 )
 
 func TestUserLoginWithOptionalParams(t *testing.T) {
@@ -22,16 +22,16 @@ func TestUserLoginWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Users.Login(context.TODO(), jamesburvelocallaghaniiicitibankdemobusinessinc.UserLoginParams{
-		Email:    jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("quantum.visionary@demobank.com"),
-		Password: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("YourSecurePassword123"),
-		MfaCode:  jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("123456"),
+	_, err := client.Users.Login(context.TODO(), jocall3.UserLoginParams{
+		Email:    jocall3.F[any]("quantum.visionary@demobank.com"),
+		Password: jocall3.F[any]("YourSecurePassword123"),
+		MfaCode:  jocall3.F[any]("123456"),
 	})
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -48,25 +48,25 @@ func TestUserRegisterWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Users.Register(context.TODO(), jamesburvelocallaghaniiicitibankdemobusinessinc.UserRegisterParams{
-		Email:    jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("alice.w@example.com"),
-		Name:     jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("Alice Wonderland"),
-		Password: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("SecureP@ssw0rd2024!"),
-		Address: jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.AddressParam{
-			City:    jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("Anytown"),
-			Country: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("USA"),
-			State:   jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("CA"),
-			Street:  jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("123 Main St"),
-			Zip:     jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("90210"),
+	_, err := client.Users.Register(context.TODO(), jocall3.UserRegisterParams{
+		Email:    jocall3.F[any]("alice.w@example.com"),
+		Name:     jocall3.F[any]("Alice Wonderland"),
+		Password: jocall3.F[any]("SecureP@ssw0rd2024!"),
+		Address: jocall3.F(jocall3.AddressParam{
+			City:    jocall3.F[any]("Anytown"),
+			Country: jocall3.F[any]("USA"),
+			State:   jocall3.F[any]("CA"),
+			Street:  jocall3.F[any]("123 Main St"),
+			Zip:     jocall3.F[any]("90210"),
 		}),
-		DateOfBirth: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("1990-05-10"),
-		Phone:       jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("+1-555-987-6543"),
+		DateOfBirth: jocall3.F[any]("1990-05-10"),
+		Phone:       jocall3.F[any]("+1-555-987-6543"),
 	})
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

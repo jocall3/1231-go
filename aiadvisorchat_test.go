@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package jamesburvelocallaghaniiicitibankdemobusinessinc_test
+package jocall3_test
 
 import (
 	"context"
@@ -8,9 +8,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/1231-go"
-	"github.com/stainless-sdks/1231-go/internal/testutil"
-	"github.com/stainless-sdks/1231-go/option"
+	"github.com/jocall3/1231-go"
+	"github.com/jocall3/1231-go/internal/testutil"
+	"github.com/jocall3/1231-go/option"
 )
 
 func TestAIAdvisorChatGetHistoryWithOptionalParams(t *testing.T) {
@@ -22,16 +22,16 @@ func TestAIAdvisorChatGetHistoryWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.AI.Advisor.Chat.GetHistory(context.TODO(), jamesburvelocallaghaniiicitibankdemobusinessinc.AIAdvisorChatGetHistoryParams{
-		Limit:     jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](map[string]interface{}{}),
-		Offset:    jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](map[string]interface{}{}),
-		SessionID: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("session-quantum-xyz-789-alpha"),
+	_, err := client.AI.Advisor.Chat.GetHistory(context.TODO(), jocall3.AIAdvisorChatGetHistoryParams{
+		Limit:     jocall3.F[any](map[string]interface{}{}),
+		Offset:    jocall3.F[any](map[string]interface{}{}),
+		SessionID: jocall3.F[any]("session-quantum-xyz-789-alpha"),
 	})
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -48,24 +48,24 @@ func TestAIAdvisorChatSendMessageWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.AI.Advisor.Chat.SendMessage(context.TODO(), jamesburvelocallaghaniiicitibankdemobusinessinc.AIAdvisorChatSendMessageParams{
-		FunctionResponse: jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.AIAdvisorChatSendMessageParamsFunctionResponse{
-			Name: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("send_money"),
-			Response: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](map[string]interface{}{
+	_, err := client.AI.Advisor.Chat.SendMessage(context.TODO(), jocall3.AIAdvisorChatSendMessageParams{
+		FunctionResponse: jocall3.F(jocall3.AIAdvisorChatSendMessageParamsFunctionResponse{
+			Name: jocall3.F[any]("send_money"),
+			Response: jocall3.F[any](map[string]interface{}{
 				"status":        "success",
 				"transactionId": "pmt_654321",
 				"amountSent":    55.5,
 				"recipient":     "Alex",
 			}),
 		}),
-		Message:   jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("Can you analyze my recent spending patterns and suggest areas for saving, focusing on my dining expenses?"),
-		SessionID: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("session-quantum-xyz-789-alpha"),
+		Message:   jocall3.F[any]("Can you analyze my recent spending patterns and suggest areas for saving, focusing on my dining expenses?"),
+		SessionID: jocall3.F[any]("session-quantum-xyz-789-alpha"),
 	})
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package jamesburvelocallaghaniiicitibankdemobusinessinc_test
+package jocall3_test
 
 import (
 	"context"
@@ -8,9 +8,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/1231-go"
-	"github.com/stainless-sdks/1231-go/internal/testutil"
-	"github.com/stainless-sdks/1231-go/option"
+	"github.com/jocall3/1231-go"
+	"github.com/jocall3/1231-go/internal/testutil"
+	"github.com/jocall3/1231-go/option"
 )
 
 func TestMarketplaceProductListWithOptionalParams(t *testing.T) {
@@ -22,18 +22,18 @@ func TestMarketplaceProductListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Marketplace.Products.List(context.TODO(), jamesburvelocallaghaniiicitibankdemobusinessinc.MarketplaceProductListParams{
-		AIPersonalizationLevel: jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.MarketplaceProductListParamsAIPersonalizationLevelHigh),
-		Category:               jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.MarketplaceProductListParamsCategoryInsurance),
-		Limit:                  jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](map[string]interface{}{}),
-		MinRating:              jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](4),
-		Offset:                 jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](map[string]interface{}{}),
+	_, err := client.Marketplace.Products.List(context.TODO(), jocall3.MarketplaceProductListParams{
+		AIPersonalizationLevel: jocall3.F(jocall3.MarketplaceProductListParamsAIPersonalizationLevelHigh),
+		Category:               jocall3.F(jocall3.MarketplaceProductListParamsCategoryInsurance),
+		Limit:                  jocall3.F[any](map[string]interface{}{}),
+		MinRating:              jocall3.F[any](4),
+		Offset:                 jocall3.F[any](map[string]interface{}{}),
 	})
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -50,21 +50,21 @@ func TestMarketplaceProductSimulateImpactWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Marketplace.Products.SimulateImpact(
 		context.TODO(),
 		"prod_home_insurance_quantum",
-		jamesburvelocallaghaniiicitibankdemobusinessinc.MarketplaceProductSimulateImpactParams{
-			SimulationParameters: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](map[string]interface{}{
+		jocall3.MarketplaceProductSimulateImpactParams{
+			SimulationParameters: jocall3.F[any](map[string]interface{}{
 				"loanAmount":          20000,
 				"repaymentTermMonths": 48,
 			}),
 		},
 	)
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

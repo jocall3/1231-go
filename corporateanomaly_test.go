@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package jamesburvelocallaghaniiicitibankdemobusinessinc_test
+package jocall3_test
 
 import (
 	"context"
@@ -8,9 +8,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/1231-go"
-	"github.com/stainless-sdks/1231-go/internal/testutil"
-	"github.com/stainless-sdks/1231-go/option"
+	"github.com/jocall3/1231-go"
+	"github.com/jocall3/1231-go/internal/testutil"
+	"github.com/jocall3/1231-go/option"
 )
 
 func TestCorporateAnomalyListWithOptionalParams(t *testing.T) {
@@ -22,20 +22,20 @@ func TestCorporateAnomalyListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Corporate.Anomalies.List(context.TODO(), jamesburvelocallaghaniiicitibankdemobusinessinc.CorporateAnomalyListParams{
-		EndDate:    jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("2024-12-31"),
-		EntityType: jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.CorporateAnomalyListParamsEntityTypeTransaction),
-		Limit:      jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](map[string]interface{}{}),
-		Offset:     jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](map[string]interface{}{}),
-		Severity:   jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.CorporateAnomalyListParamsSeverityCritical),
-		StartDate:  jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("2024-01-01"),
-		Status:     jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.CorporateAnomalyListParamsStatusNew),
+	_, err := client.Corporate.Anomalies.List(context.TODO(), jocall3.CorporateAnomalyListParams{
+		EndDate:    jocall3.F[any]("2024-12-31"),
+		EntityType: jocall3.F(jocall3.CorporateAnomalyListParamsEntityTypeTransaction),
+		Limit:      jocall3.F[any](map[string]interface{}{}),
+		Offset:     jocall3.F[any](map[string]interface{}{}),
+		Severity:   jocall3.F(jocall3.CorporateAnomalyListParamsSeverityCritical),
+		StartDate:  jocall3.F[any]("2024-01-01"),
+		Status:     jocall3.F(jocall3.CorporateAnomalyListParamsStatusNew),
 	})
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -52,19 +52,19 @@ func TestCorporateAnomalyUpdateStatusWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Corporate.Anomalies.UpdateStatus(
 		context.TODO(),
 		"anom_risk-2024-07-21-D1E2F3",
-		jamesburvelocallaghaniiicitibankdemobusinessinc.CorporateAnomalyUpdateStatusParams{
-			Status:          jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.CorporateAnomalyUpdateStatusParamsStatusResolved),
-			ResolutionNotes: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("Confirmed legitimate transaction after contacting vendor. Marked as resolved."),
+		jocall3.CorporateAnomalyUpdateStatusParams{
+			Status:          jocall3.F(jocall3.CorporateAnomalyUpdateStatusParamsStatusResolved),
+			ResolutionNotes: jocall3.F[any]("Confirmed legitimate transaction after contacting vendor. Marked as resolved."),
 		},
 	)
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

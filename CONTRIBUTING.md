@@ -41,7 +41,7 @@ To use a local version of this library from source in another project, edit the 
 directive. This can be done through the CLI with the following:
 
 ```sh
-$ go mod edit -replace github.com/stainless-sdks/1231-go=/path/to/1231-go
+$ go mod edit -replace github.com/jocall3/1231-go=/path/to/1231-go
 ```
 
 ## Running tests

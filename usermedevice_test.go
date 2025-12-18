@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package jamesburvelocallaghaniiicitibankdemobusinessinc_test
+package jocall3_test
 
 import (
 	"context"
@@ -8,9 +8,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/1231-go"
-	"github.com/stainless-sdks/1231-go/internal/testutil"
-	"github.com/stainless-sdks/1231-go/option"
+	"github.com/jocall3/1231-go"
+	"github.com/jocall3/1231-go/internal/testutil"
+	"github.com/jocall3/1231-go/option"
 )
 
 func TestUserMeDeviceListWithOptionalParams(t *testing.T) {
@@ -22,15 +22,15 @@ func TestUserMeDeviceListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Users.Me.Devices.List(context.TODO(), jamesburvelocallaghaniiicitibankdemobusinessinc.UserMeDeviceListParams{
-		Limit:  jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](map[string]interface{}{}),
-		Offset: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](map[string]interface{}{}),
+	_, err := client.Users.Me.Devices.List(context.TODO(), jocall3.UserMeDeviceListParams{
+		Limit:  jocall3.F[any](map[string]interface{}{}),
+		Offset: jocall3.F[any](map[string]interface{}{}),
 	})
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -47,12 +47,12 @@ func TestUserMeDeviceDeregister(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	err := client.Users.Me.Devices.Deregister(context.TODO(), "dev_mobile_ios_aabbcc")
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -69,19 +69,19 @@ func TestUserMeDeviceRegisterWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Users.Me.Devices.Register(context.TODO(), jamesburvelocallaghaniiicitibankdemobusinessinc.UserMeDeviceRegisterParams{
-		DeviceType:         jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.UserMeDeviceRegisterParamsDeviceTypeMobile),
-		Model:              jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("Samsung Galaxy S24 Ultra"),
-		Os:                 jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("Android 14"),
-		BiometricSignature: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("base64encoded_android_biometric_proof"),
-		DeviceName:         jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("Alex's Work Phone"),
-		PushToken:          jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("ExponentPushToken[yzzzyzzzyzzzyzzz]"),
+	_, err := client.Users.Me.Devices.Register(context.TODO(), jocall3.UserMeDeviceRegisterParams{
+		DeviceType:         jocall3.F(jocall3.UserMeDeviceRegisterParamsDeviceTypeMobile),
+		Model:              jocall3.F[any]("Samsung Galaxy S24 Ultra"),
+		Os:                 jocall3.F[any]("Android 14"),
+		BiometricSignature: jocall3.F[any]("base64encoded_android_biometric_proof"),
+		DeviceName:         jocall3.F[any]("Alex's Work Phone"),
+		PushToken:          jocall3.F[any]("ExponentPushToken[yzzzyzzzyzzzyzzz]"),
 	})
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

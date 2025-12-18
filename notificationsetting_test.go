@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package jamesburvelocallaghaniiicitibankdemobusinessinc_test
+package jocall3_test
 
 import (
 	"context"
@@ -8,9 +8,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/1231-go"
-	"github.com/stainless-sdks/1231-go/internal/testutil"
-	"github.com/stainless-sdks/1231-go/option"
+	"github.com/jocall3/1231-go"
+	"github.com/jocall3/1231-go/internal/testutil"
+	"github.com/jocall3/1231-go/option"
 )
 
 func TestNotificationSettingGet(t *testing.T) {
@@ -22,12 +22,12 @@ func TestNotificationSettingGet(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Notifications.Settings.Get(context.TODO())
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -44,31 +44,31 @@ func TestNotificationSettingUpdateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Notifications.Settings.Update(context.TODO(), jamesburvelocallaghaniiicitibankdemobusinessinc.NotificationSettingUpdateParams{
-		ChannelPreferences: jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.NotificationSettingUpdateParamsChannelPreferences{
-			Email: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](true),
-			InApp: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](true),
-			Push:  jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](true),
-			SMS:   jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](true),
+	_, err := client.Notifications.Settings.Update(context.TODO(), jocall3.NotificationSettingUpdateParams{
+		ChannelPreferences: jocall3.F(jocall3.NotificationSettingUpdateParamsChannelPreferences{
+			Email: jocall3.F[any](true),
+			InApp: jocall3.F[any](true),
+			Push:  jocall3.F[any](true),
+			SMS:   jocall3.F[any](true),
 		}),
-		EventPreferences: jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.NotificationSettingUpdateParamsEventPreferences{
-			AIInsights:        jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](true),
-			BudgetAlerts:      jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](true),
-			PromotionalOffers: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](false),
-			SecurityAlerts:    jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](true),
-			TransactionAlerts: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](true),
+		EventPreferences: jocall3.F(jocall3.NotificationSettingUpdateParamsEventPreferences{
+			AIInsights:        jocall3.F[any](true),
+			BudgetAlerts:      jocall3.F[any](true),
+			PromotionalOffers: jocall3.F[any](false),
+			SecurityAlerts:    jocall3.F[any](true),
+			TransactionAlerts: jocall3.F[any](true),
 		}),
-		QuietHours: jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.NotificationSettingUpdateParamsQuietHours{
-			Enabled:   jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](true),
-			EndTime:   jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("08:00"),
-			StartTime: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("22:00"),
+		QuietHours: jocall3.F(jocall3.NotificationSettingUpdateParamsQuietHours{
+			Enabled:   jocall3.F[any](true),
+			EndTime:   jocall3.F[any]("08:00"),
+			StartTime: jocall3.F[any]("22:00"),
 		}),
 	})
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

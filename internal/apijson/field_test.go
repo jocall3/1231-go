@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/stainless-sdks/1231-go/internal/param"
+	"github.com/jocall3/1231-go/internal/param"
 )
 
 type Struct struct {

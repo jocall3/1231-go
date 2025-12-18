@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package jamesburvelocallaghaniiicitibankdemobusinessinc_test
+package jocall3_test
 
 import (
 	"context"
@@ -8,9 +8,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/1231-go"
-	"github.com/stainless-sdks/1231-go/internal/testutil"
-	"github.com/stainless-sdks/1231-go/option"
+	"github.com/jocall3/1231-go"
+	"github.com/jocall3/1231-go/internal/testutil"
+	"github.com/jocall3/1231-go/option"
 )
 
 func TestGoalNewWithOptionalParams(t *testing.T) {
@@ -22,21 +22,21 @@ func TestGoalNewWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Goals.New(context.TODO(), jamesburvelocallaghaniiicitibankdemobusinessinc.GoalNewParams{
-		Name:                 jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("Dream Vacation Fund"),
-		TargetAmount:         jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](15000),
-		TargetDate:           jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("2026-06-30"),
-		Type:                 jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.GoalNewParamsTypeLargePurchase),
-		ContributingAccounts: jamesburvelocallaghaniiicitibankdemobusinessinc.F([]interface{}{map[string]interface{}{}}),
-		GenerateAIPlan:       jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](true),
-		InitialContribution:  jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](1000),
-		RiskTolerance:        jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.GoalNewParamsRiskToleranceConservative),
+	_, err := client.Goals.New(context.TODO(), jocall3.GoalNewParams{
+		Name:                 jocall3.F[any]("Dream Vacation Fund"),
+		TargetAmount:         jocall3.F[any](15000),
+		TargetDate:           jocall3.F[any]("2026-06-30"),
+		Type:                 jocall3.F(jocall3.GoalNewParamsTypeLargePurchase),
+		ContributingAccounts: jocall3.F([]interface{}{map[string]interface{}{}}),
+		GenerateAIPlan:       jocall3.F[any](true),
+		InitialContribution:  jocall3.F[any](1000),
+		RiskTolerance:        jocall3.F(jocall3.GoalNewParamsRiskToleranceConservative),
 	})
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -53,12 +53,12 @@ func TestGoalGet(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Goals.Get(context.TODO(), "goal_retirement_2050")
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -75,24 +75,24 @@ func TestGoalUpdateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Goals.Update(
 		context.TODO(),
 		"goal_retirement_2050",
-		jamesburvelocallaghaniiicitibankdemobusinessinc.GoalUpdateParams{
-			ContributingAccounts: jamesburvelocallaghaniiicitibankdemobusinessinc.F([]interface{}{map[string]interface{}{}}),
-			GenerateAIPlan:       jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](true),
-			Name:                 jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("Revised Retirement Fund Goal"),
-			RiskTolerance:        jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.GoalUpdateParamsRiskToleranceConservative),
-			Status:               jamesburvelocallaghaniiicitibankdemobusinessinc.F(jamesburvelocallaghaniiicitibankdemobusinessinc.GoalUpdateParamsStatusPaused),
-			TargetAmount:         jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](1200000),
-			TargetDate:           jamesburvelocallaghaniiicitibankdemobusinessinc.F[any]("2029-12-31"),
+		jocall3.GoalUpdateParams{
+			ContributingAccounts: jocall3.F([]interface{}{map[string]interface{}{}}),
+			GenerateAIPlan:       jocall3.F[any](true),
+			Name:                 jocall3.F[any]("Revised Retirement Fund Goal"),
+			RiskTolerance:        jocall3.F(jocall3.GoalUpdateParamsRiskToleranceConservative),
+			Status:               jocall3.F(jocall3.GoalUpdateParamsStatusPaused),
+			TargetAmount:         jocall3.F[any](1200000),
+			TargetDate:           jocall3.F[any]("2029-12-31"),
 		},
 	)
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -109,15 +109,15 @@ func TestGoalListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Goals.List(context.TODO(), jamesburvelocallaghaniiicitibankdemobusinessinc.GoalListParams{
-		Limit:  jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](map[string]interface{}{}),
-		Offset: jamesburvelocallaghaniiicitibankdemobusinessinc.F[any](map[string]interface{}{}),
+	_, err := client.Goals.List(context.TODO(), jocall3.GoalListParams{
+		Limit:  jocall3.F[any](map[string]interface{}{}),
+		Offset: jocall3.F[any](map[string]interface{}{}),
 	})
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -134,12 +134,12 @@ func TestGoalDelete(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := jamesburvelocallaghaniiicitibankdemobusinessinc.NewClient(
+	client := jocall3.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	err := client.Goals.Delete(context.TODO(), "goal_retirement_2050")
 	if err != nil {
-		var apierr *jamesburvelocallaghaniiicitibankdemobusinessinc.Error
+		var apierr *jocall3.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
